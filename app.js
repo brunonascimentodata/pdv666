@@ -107,6 +107,13 @@ function formatarMoeda(valor) {
   });
 }
 
+function formatarNumeroBR(valor) {
+  return Number(valor || 0).toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+
 function numero(valor) {
   if (valor === null || valor === undefined) return 0;
 
@@ -226,7 +233,7 @@ function abrirVendas() {
 
         <div>
           <label>Valor unitário</label>
-          <input id="vendaValor" type="number" step="0.01" required />
+          <input id="vendaValor" type="text" inputmode="decimal" placeholder="Ex: 60,00" required />
         </div>
 
         <div class="full">
@@ -373,7 +380,7 @@ window.editarVenda = function(id) {
   document.getElementById("vendaItem").value = venda.item || "";
   document.getElementById("vendaTam").value = venda.tam || "";
   document.getElementById("vendaQnt").value = venda.qnt || 1;
-  document.getElementById("vendaValor").value = venda.valor || 0;
+  document.getElementById("vendaValor").value = formatarNumeroBR(venda.valor);
   document.getElementById("vendaObs").value = venda.obs || "";
   document.getElementById("vendaSubmit").textContent = "Atualizar venda";
 };
@@ -408,7 +415,7 @@ function abrirCustos() {
 
         <div>
           <label>Valor</label>
-          <input id="custoValor" type="number" step="0.01" required />
+          <input id="custoValor" type="text" inputmode="decimal" placeholder="Ex: 299,94" required />
         </div>
 
         <div>
@@ -543,7 +550,7 @@ window.editarCusto = function(id) {
 
   document.getElementById("custoData").value = custo.data || "";
   document.getElementById("custoNome").value = custo.nome || "";
-  document.getElementById("custoValor").value = custo.valor || 0;
+  document.getElementById("custoValor").value = formatarNumeroBR(custo.valor);
   document.getElementById("custoStatus").value = custo.status || "Pago";
   document.getElementById("custoObs").value = custo.obs || "";
   document.getElementById("custoSubmit").textContent = "Atualizar custo";
