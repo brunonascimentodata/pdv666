@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDV666 | Devils Clothing</title>
+  <link rel="icon" type="image/png" href="./assets/pentagrama.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<main class="container">
+
+  <section id="loginScreen" class="login-wrapper">
+    <div class="card login-card">
+      <div class="brand">
+        <span class="brand-mark logo-mark">
+        <img src="./assets/pentagrama.png" alt="Logo PDV666" />
+        </span>
+        <div>
+          <h1>PDV666</h1>
+          <p>Devils Clothing Financeiro</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>E-mail</label>
+        <input id="email" type="email" placeholder="seuemail@dominio.com.br" />
+      </div>
+
+      <div class="form-group">
+        <label>Senha</label>
+        <input id="password" type="password" placeholder="Digite sua senha" />
+      </div>
+
+      <button id="loginBtn" class="primary-btn">Entrar no sistema</button>
+      <span id="loginError"></span>
+
+      <p class="security-note">Acesso privado protegido pelo Satanás.</p>
+    </div>
+  </section>
+
+  <section id="appScreen" class="hidden app-wrapper">
+
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">Devils Clothing</span>
+        <h1>PDV666</h1>
+        <p id="userEmail"></p>
+      </div>
+
+      <button id="logoutBtn" class="logout-btn">Sair</button>
+    </header>
+
+    <section id="homeArea">
+      <section class="hero-panel">
+        <div>
+          <h2>Controle financeiro da marca</h2>
+          <p>Cadastre vendas, custos e acompanhe o resultado financeiro da operação.</p>
+        </div>
+
+        <div class="hero-badge">
+          <span>🔥</span>
+          <strong>Modo operação</strong>
+        </div>
+      </section>
+
+      <section class="summary-grid">
+        <div class="summary-card">
+          <span>Total de vendas</span>
+          <strong id="totalVendas">R$ 0,00</strong>
+        </div>
+
+        <div class="summary-card">
+          <span>Total de custos</span>
+          <strong id="totalCustos">R$ 0,00</strong>
+        </div>
+
+        <div class="summary-card result">
+          <span>Resultado</span>
+          <strong id="resultadoFinal">R$ 0,00</strong>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card menu-card" id="vendasCard">
+          <div class="card-icon">🛒</div>
+          <h2>Vendas</h2>
+          <p>Cadastre SKU, item, tamanho, quantidade e valor vendido.</p>
+          <span class="card-link">Abrir vendas</span>
+        </div>
+
+        <div class="card menu-card" id="custosCard">
+          <div class="card-icon">📄</div>
+          <h2>Custos</h2>
+          <p>Cadastre despesas, fornecedores, contas pagas e pendentes.</p>
+          <span class="card-link">Abrir custos</span>
+        </div>
+
+        <div class="card menu-card" id="resultadoCard">
+          <div class="card-icon">📊</div>
+          <h2>Resultado</h2>
+          <p>Veja totais, lucro bruto e visão financeira geral.</p>
+          <span class="card-link">Abrir resultado</span>
+        </div>
+      </section>
+    </section>
+
+    <section id="contentArea" class="content-area hidden">
+      <div class="content-header">
+        <div>
+          <span class="eyebrow">PDV666</span>
+          <h2 id="contentTitle">Tela</h2>
+        </div>
+
+        <button id="backHomeBtn" class="secondary-btn">Voltar</button>
+      </div>
+
+      <div id="contentBody"></div>
+    </section>
+
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
